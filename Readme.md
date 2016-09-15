@@ -39,7 +39,15 @@ What comes after the numbers is entirely arbitrary from the perspective of this 
 
 ### Writing Related Articles
 
-If you are planning on developing articles from chapters of your book, these can be stored in a directory 
+If you are planning on developing articles from chapters of your book, these can be stored in a directory called `articles/`. **The file names must not contain spaces**, given how Rake compiles these articles. See "Compiling Stand-alone Articles" below for information about how to compile these.
+
+### Adding Footnotes
+
+If you like, you can keep footnotes in a separate file. 
+
+For chapters, this Rakefile looks in `chapters/notes` for files that start with the same numbers as the chapter file being compiled. So for a file named `01-introduction.md`, Rake will look for a file in `notes/` named `01-notes.md`.
+
+For articles, this Rakefile looks in `articles/notes` for files that start with the same file name as the article file being compiled and end with the phrase `-notes`. So for a file named `article.md`, Rake will look for a file in `notes/` named `article-notes.md`.
 
 ## Writing Your Book
 
@@ -116,4 +124,4 @@ To compile an individual chapter, run `rake ch<chapter number>:<operation name>`
 
 #### Compiling Stand-alone Articles
 
-To compile a stand-alone article, run `rake articles:<article tag>:<operation name>` where `<article tag>` is the name of the file the article is stored in and `<operation name>` is replaced with the file format you want your book compiled as. For example: `rake articles:my-article:docx` to compile a file named `articles/my-article.md` to MS Word.
+To compile a stand-alone article, run `rake articles:<article tag>:<operation name>` where `<article tag>` is the name of the file the article is stored in and `<operation name>` is replaced with the file format you want your book compiled as. For example: `rake articles:article:docx` to compile a file named `articles/article.md` to MS Word.
