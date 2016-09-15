@@ -99,9 +99,9 @@ There are a number of tasks you can use to compile your book using this Rakefile
 
 This document defines three modes:
 
-1. As stand-alone articles (see "Writing Related Articles" above)
-1. As individual chapters
 1. As a whole manuscript
+1. As individual chapters
+1. As stand-alone articles (see "Writing Related Articles" above)
 
 ### Operations To Perform On Your Book
 
