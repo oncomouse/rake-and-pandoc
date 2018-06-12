@@ -28,7 +28,11 @@ def pandoc(output_name, output, options="")
     else
         bibliography_switch = ""
     end
-    sh %{ pandoc -s -f markdown+smart -o #{output_name}.#{output} #{file} #{bibliography_switch} --csl=#{$csl}.csl #{options}}
+	csl_switch = "--csl=#{$csl}.csl"
+	if not defined? $csl
+		csl_switch = ""
+	end
+    sh %{ pandoc -s -f markdown+smart --filter=pandoc-citeproc -o #{output_name}.#{output} #{file} #{bibliography_switch} #{csl_switch} #{options}}
 	
 	Rake::Task["cleanup"].invoke
 end
