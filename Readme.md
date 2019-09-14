@@ -2,11 +2,13 @@
 
 This directory contains a `Rakefile` that can compile your manuscript for you, using [Rake](http://rake.rubyforge.org/), the Ruby Automated Build System.
 
-Rake allows users to run predefined "tasks" that automate certain repetitive command lines. In this document, you will find the directory structure this Rakefile expects, some notes on using YAML metadata to title your chapters, and a list of tasks you can run using Rake.
+Rake allows users to run predefined "tasks" that automate certain repetitive command line tasks. In this document, you will find an explanation of the directory structure this Rakefile expects, some notes on using YAML metadata to title your chapters, and a list of tasks you can run using Rake.
 
 ## Quick Start
 
-If you want to quickly get started with this Rakefile, you need to install ruby (should be included on OSX and Linux) and install Rake (run `gem install rake`). Then, follow these quick points:
+If you want to quickly get started with this Rakefile, you need to install ruby (should be included on OSX and Linux) and install Rake (run `gem install rake`). You will also need to install [Pandoc (and Pandoc Citeproc, if you need citations)](https://pandoc.org/installing.html) to compile your markdown files.
+
+Once you have Ruby, Rake, and Pandoc, follow these quick steps to get started:
 
 1. Chapters should be named starting with numbers and stored in the `chapters/` directory (for example: `my-awesome-book/chapters/01-introduction.md`).
 	* The name after the numbers is entirely up to you!
