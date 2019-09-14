@@ -1,3 +1,5 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-gem "rake", "~> 11"
+source 'https://rubygems.org'
+
+gem 'rake'
