@@ -6,7 +6,7 @@ Rake allows users to run predefined "tasks" that automate certain repetitive com
 
 ## Quick Start
 
-If you want to quickly get started with this Rakefile, you need to install ruby (should be included on OSX and Linux) andinstall Rake (run `gem install rake`). Then, follow these quick points:
+If you want to quickly get started with this Rakefile, you need to install ruby (should be included on OSX and Linux) and install Rake (run `gem install rake`). Then, follow these quick points:
 
 1. Chapters should be named starting with numbers and stored in the `chapters/` directory (for example: `my-awesome-book/chapters/01-introduction.md`).
 	* The name after the numbers is entirely up to you!
@@ -89,7 +89,9 @@ This Rakefile is configured to use Chicago short note format out of the box. Edi
 
 #### Customizing Citations: Global Bibliography
 
-If you use a global BibLaTex bibliography, edit the `Rakefile` and uncomment (remove the `#` at the beginning of the line) the defintion of the `$bibliography` variable. Change that variable's value to the full path of your global bibliography.
+If you use a global BibLaTex bibliography, edit the `Rakefile` and change the value of the constant `BIBLIOGRAPHY` from `nil` to the full path of your global .bib file. For instance, if you had a bibliography file stored at `~/global.bib`, you could change `BIBLIOGRAPHY = nil` to `BIBLIOGRAPHY = '~/global.bib'` and pandoc will start using your global file.
+
+If you use Zotero and want to use an automatically updated, global bibliography, consider adding [zotero-better-bibtex](https://github.com/retorquere/zotero-better-bibtex) to Zotero.
 
 ## Compiling Your Book
 
@@ -109,10 +111,10 @@ This Rakefile can compile your document to a number of file formats supported by
 
 Supported file formats:
 
-* `docx` --- Microsoft Word format
-* `pdf` --- PDF (Pandoc requires LaTeX to be installed)
-* `epub` --- The ePub format
-* `html` --- HTML suitable for posting online
+* `docx` -- Microsoft Word format
+* `pdf` -- PDF (Pandoc requires LaTeX to be installed)
+* `epub` -- The ePub format
+* `html` -- HTML suitable for posting online
 
 #### Compiling the Whole Manuscript
 
